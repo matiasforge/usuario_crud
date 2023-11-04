@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Delete User</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Delete User</h1>
+        <p>Are you sure you want to delete the user?</p>
+        <div class="user-info">
+            <p><strong>User ID:</strong> {{ user[0] }}</p>
+            <p><strong>Name:</strong> {{ user[1] }} {{ user[2] }}</p>
+            <p><strong>Email:</strong> {{ user[3] }}</p>
+        </div>
+        <form method="post" action="{{ url_for('delete_user', user_id=user[0]) }}">
+            <input type="submit" value="Delete" class="delete-btn">
+        </form>
+    </div>
+</body>
+</html>
